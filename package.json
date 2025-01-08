@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.3.0",
+    "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "framer-motion": "^11.13.5",
     "localforage": "^1.10.0",
