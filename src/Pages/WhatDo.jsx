@@ -1,88 +1,94 @@
-const WhatDo = () => {
-    return (
-        <div>
-            <section className="w-full bg-[rgb(32,37,40)] pt-7 pb-7 md:pt-20 md:pb-24">
-                <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
-                    {/* Image */}
-                    <div className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
-                        <img 
-                            src="https://i.ibb.co.com/ng6LSZL/chatgpt8.jpg" 
-                            className="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20" 
-                            alt="Productivity" 
-                        />
-                    </div>
-                    {/* Content */}
-                    <div className="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
-                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-                            Boost Productivity
-                        </h2>
-                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
-                            Build an atmosphere that creates productivity in your organization and your company culture.
-                        </p>
-                        <ul className="p-0 m-0 leading-6 border-0 border-gray-300">
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Maximize productivity and growth
-                            </li>
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Speed past your competition
-                            </li>
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Learn the top techniques
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
-                    {/* Content */}
-                    <div className="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
-                        <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-                            Automated Tasks
-                        </h2>
-                        <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
-                            Save time and money with our revolutionary services. We are the leaders in the industry.
-                        </p>
-                        <ul className="p-0 m-0 leading-6 border-0 border-gray-300">
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Automated task management workflow
-                            </li>
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Detailed analytics for your data
-                            </li>
-                            <li className="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                                <span className="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full" data-primary="yellow-400">
-                                    <span className="text-sm font-bold">✓</span>
-                                </span> 
-                                Some awesome integrations
-                            </li>
-                        </ul>
-                    </div>
-                    {/* Image */}
-                    <div className="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2">
-                        <img 
-                            src="https://cdn.devdojo.com/images/december2020/settings.png" 
-                            className="pl-4 sm:pr-10 xl:pl-10 lg:pr-32" 
-                            alt="Settings" 
-                        />
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
-};
+"use client"
 
-export default WhatDo;
+import { motion } from "framer-motion"
+import { FaLaptopCode, FaPaintBrush, FaServer } from "react-icons/fa"
+
+const skills = [
+  {
+    name: "Web Design",
+    icon: <FaPaintBrush size={40} className="text-teal-400" />,
+    description: "Crafting visually stunning and user-friendly interfaces with a keen eye for detail and aesthetics.",
+    color: "from-teal-400 to-teal-600",
+  },
+  {
+    name: "Web Development",
+    icon: <FaLaptopCode size={40} className="text-indigo-400" />,
+    description: "Building high-performance, responsive, and dynamic web applications with modern technologies.",
+    color: "from-indigo-400 to-indigo-600",
+  },
+  {
+    name: "MERN Stack Development",
+    icon: <FaServer size={40} className="text-amber-400" />,
+    description:
+      "Developing end-to-end full-stack applications using MongoDB, Express, React, and Node.js for seamless user experiences.",
+    color: "from-amber-400 to-amber-600",
+  },
+]
+
+const WhatIDo = () => {
+  return (
+   
+    <div style={{ backgroundColor: "rgb(32, 37, 40)" }}>
+    <div  className="py-16 relative w-11/12 mx-auto overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute  overflow-hidden opacity-10">
+        <div className="absolute h-96 w-96 -top-48 -left-48 bg-teal-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute h-96 w-96 -bottom-48 -right-48 bg-indigo-500 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-sm uppercase font-light text-teal-400 tracking-widest mb-4">Expertise</h2>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 relative inline-block">
+            What I Do
+            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 via-indigo-400 to-amber-400"></span>
+          </h1>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="relative group"
+            >
+              <div className="absolute  bg-gradient-to-br opacity-75 blur group-hover:opacity-100 transition duration-300 rounded-lg"></div>
+              <div className="relative bg-[rgb(32,37,40)] p-8 rounded-lg border border-gray-700 h-full flex flex-col justify-between z-10">
+                <div>
+                  <div
+                    className={`w-16 h-16 mb-6 rounded-full bg-gradient-to-br ${skill.color} flex items-center justify-center`}
+                  >
+                    {skill.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">{skill.name}</h3>
+                  <p className="text-gray-300">{skill.description}</p>
+                </div>
+                <motion.div className="mt-6" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <a
+                    href="#"
+                    className={`inline-block py-2 px-4 bg-gradient-to-r ${skill.color} text-gray-900 font-semibold rounded-full text-sm transition duration-300 hover:shadow-lg hover:shadow-${skill.color.split("-")[1]}/50`}
+                  >
+                    Learn More
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+     
+      </div>
+    </div>
+    </div>
+  )
+}
+
+export default WhatIDo
+
