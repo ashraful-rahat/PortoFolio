@@ -1,8 +1,10 @@
 import AOS from "aos";
 import "aos/dist/aos.css"; // AOS CSS for animations
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useEffect } from "react";
 import { FaBootstrap, FaCss3Alt, FaHtml5, FaJs, FaNode, FaReact, FaStripe } from "react-icons/fa";
+import { FiCode, FiDatabase, FiLayout, FiServer } from "react-icons/fi";
 import { SiDaisyui, SiExpress, SiFirebase, SiMongodb, SiTailwindcss } from "react-icons/si";
 import myself from '/public/images/mypic2.jpg'; // Add your own photo path here
 
@@ -31,7 +33,7 @@ const About = () => {
       ></div>
 
       {/* Profile and About Content Section */}
-      <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-10 px-4 md:px-16">
+      <div className="flex flex-col md:flex-row justify-center items-center space-y-8  lg:mt-16 md:space-y-0 md:space-x-10 px-4 md:px-16">
         {/* Profile Section with Flexbox Layout */}
         <div
           className="flex-1 flex justify-center"
@@ -51,27 +53,62 @@ const About = () => {
         </div>
 
         {/* About Content Section */}
-        <div className="flex-1 text-indigo-200 md:w-1/2">
-          <div
-            className="backdrop-blur-md  bg-opacity-30 p-6 text-base rounded-xl shadow-2xl"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
-            <p className="font-mono text-lg">
-              I&#39;m <span className="font-bold text-lg">Ashraful Rahat</span>, a 20-year-old{" "}
-              <span className="font-bold text-lg">Full-Stack Developer</span> with 1+ years of experience. I work
-              with JavaScript and its endless list of frameworks, primarily with{" "}
-              <span className="font-bold text-lg">React.js, Node.js, and Express.js</span>.
-            </p>
-            <br />
-            <p className="font-mono text-lg">
-              My main experience is in front-end development, but I also have a passion for back-end design. I believe that
-              producing a modern website requires a combination of design, server technology, and the user interface
-              layer. With experience in both design and development, I can create optimal user experiences.
-            </p>
-            <br />
+      {/* About Content Section */}
+<motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="flex-1 md:w-1/2 space-y-8"
+>
+  <div className="backdrop-blur-md bg-white/5 p-8 rounded-2xl shadow-2xl border border-white/10">
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="space-y-6"
+      >
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+          Building Digital Experiences
+        </h2>
+
+        <div className="space-y-4 text-gray-300">
+          <p className="text-lg leading-relaxed">
+            Hi! I&apos;m <span className="font-semibold text-emerald-400">Ashraful Rahat</span>, a passionate full-stack developer specializing in modern web technologies. With over 1 year of hands-on experience, I craft robust applications using:
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="flex items-center gap-2">
+              <FiCode className="text-purple-400" />
+              <span className="font-mono">React.js/Next.js</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FiServer className="text-purple-400" />
+              <span className="font-mono">Node.js/Express</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FiDatabase className="text-purple-400" />
+              <span className="font-mono">MongoDB/PostgreSQL</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FiLayout className="text-purple-400" />
+              <span className="font-mono">Tailwind CSS</span>
+            </div>
           </div>
+
+          <p className="text-lg leading-relaxed mt-6">
+            My development approach combines clean code architecture with intuitive user interfaces. While I excel in frontend development, I particularly enjoy solving complex backend challenges and creating seamless API integrations.
+          </p>
+
+ 
         </div>
+      </motion.div>
+    </AnimatePresence>
+
+
+  </div>
+</motion.div>
+        
       </div>
 
       {/* Skills Section (My Stack) */}
