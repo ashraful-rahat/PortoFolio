@@ -16,7 +16,7 @@ const Home = () => {
         <WhatDo />
       </Scroll>
 
-      <Scroll delay={0.4}>
+      <Scroll delay={0.6}>
         <About />
       </Scroll>
 

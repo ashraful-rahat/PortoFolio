@@ -88,33 +88,64 @@ const MyResume = () => {
           </Tab.List>
           <Tab.Panels className="mt-4">
             <Tab.Panel>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <div className="text-pink-500 mb-4">2020 - Present</div>
-                <h2 className="text-4xl font-bold text-white mb-8">Education Quality</h2>
-                <div className="space-y-6">
-                  <TimelineEntry
-                    year="2024 - Present"
-                    title="Bachelor of Science in Computer Engineering"
-                    subtitle="Bangladesh University of Professional"
-                    additionalInfo="Current CGPA: 3.00/4.00"
-                    description="Pursuing major in Software Engineering with focus on modern web technologies and artificial intelligence applications."
-                  />
-                  <TimelineEntry
-                    year="2020 - 2024"
-                    title="Diploma in Engineering"
-                    subtitle="Feni Government Computer Institute"
-                    additionalInfo="CGPA: 3.44/4.00"
-                    description="Specialized in Computer Science and Technology, with emphasis on practical programming and system design."
-                  />
-                  <TimelineEntry
-                    year="2020"
-                    title="Secondary School Certificate"
-                    subtitle="Feni Govt. Pilot High School"
-                    additionalInfo="GPA: 5.00/5.00"
-                    description="Completed SSC with excellence in Science group, focusing on mathematics and computer studies."
-                  />
-                </div>
-              </motion.div>
+            <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <div className="text-pink-500 mb-4">2020 - Present</div>
+  <h2 className="text-4xl font-bold text-white mb-8">Education Quality</h2>
+  
+  <motion.div
+    className="space-y-6"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      visible: { transition: { staggerChildren: 0.2 } }
+    }}
+  >
+    {[
+      {
+        year: "2024 - Present",
+        title: "Bachelor of Science in Computer Engineering",
+        subtitle: "Bangladesh University of Professional",
+        additionalInfo: "Current CGPA: 3.00/4.00",
+        description: "Pursuing major in Software Engineering..."
+      },
+      {
+        year: "2020 - 2024",
+        title: "Diploma in Engineering",
+        subtitle: "Feni Government Computer Institute",
+        additionalInfo: "CGPA: 3.44/4.00",
+        description: "Specialized in Computer Science..."
+      },
+      {
+        year: "2020",
+        title: "Secondary School Certificate",
+        subtitle: "Feni Govt. Pilot High School",
+        additionalInfo: "GPA: 5.00/5.00",
+        description: "Completed SSC with excellence..."
+      }
+    ].map((item, index) => (
+      <motion.div
+        key={index}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 }
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <TimelineEntry
+          year={item.year}
+          title={item.title}
+          subtitle={item.subtitle}
+          additionalInfo={item.additionalInfo}
+          description={item.description}
+        />
+      </motion.div>
+    ))}
+  </motion.div>
+</motion.div>
             </Tab.Panel>
             <Tab.Panel>
               <motion.div

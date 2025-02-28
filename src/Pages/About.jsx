@@ -15,7 +15,7 @@ const About = () => {
     <div className="min-h-screen pb-40 bg-[rgb(32,37,40)] text-white" id="about">
       {/* About Header */}
       <motion.h1
-        className="text-4xl text-indigo-200 text-center"
+        className="text-4xl text-indigo-200 mt-16 text-center"
         data-aos="fade-down"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
