@@ -32,83 +32,107 @@ const About = () => {
         data-aos-easing="ease-in-out"
       ></div>
 
-      {/* Profile and About Content Section */}
-      <div className="flex flex-col md:flex-row justify-center items-center space-y-8  lg:mt-16 md:space-y-0 md:space-x-10 px-4 md:px-16">
-        {/* Profile Section with Flexbox Layout */}
-        <div
+         {/* Profile and About Content Section */}
+         <div className="flex flex-col md:flex-row justify-center items-center space-y-8 lg:mt-16 md:space-y-0 md:space-x-10 px-4 md:px-16">
+        {/* Profile Image Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: 'spring', stiffness: 100, delay: 0.6 }}
           className="flex-1 flex justify-center"
-          data-aos="fade-right"
-          data-aos-duration="1500"
         >
-          {/* Custom Image Shape: Using an octagon shape */}
           <div className="w-72 md:w-96 h-72 md:h-[400px] relative overflow-hidden">
-            <img
+            <motion.img
               src={myself}
               alt="Profile"
-              className="object-cover w-full h-full rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300" // Smooth hover scaling and shadow effect
+              className="object-cover w-full h-full rounded-2xl shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 200 }}
             />
-            {/* Optional overlay effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"></div>
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              transition={{ duration: 1, delay: 1 }}
+            />
           </div>
-        </div>
+        </motion.div>
 
         {/* About Content Section */}
-      {/* About Content Section */}
-<motion.div 
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
-  className="flex-1 md:w-1/2 space-y-8"
->
-  <div className="backdrop-blur-md bg-white/5 p-8 rounded-2xl shadow-2xl border border-white/10">
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="space-y-6"
-      >
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-          Building Digital Experiences
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: 'spring', stiffness: 100, delay: 0.8 }}
+          className="flex-1 md:w-1/2 space-y-8"
+        >
+          <div className="backdrop-blur-md bg-white/5 p-8 rounded-2xl shadow-2xl border border-white/10">
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="space-y-6"
+              >
+                <motion.h2
+                  initial={{ y: 20 }}
+                  animate={{ y: 0 }}
+                  className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"
+                >
+                  Building Digital Experiences
+                </motion.h2>
 
-        <div className="space-y-4 text-gray-300">
-          <p className="text-lg leading-relaxed">
-            Hi! I&apos;m <span className="font-semibold text-emerald-400">Ashraful Rahat</span>, a passionate full-stack developer specializing in modern web technologies. With over 1 year of hands-on experience, I craft robust applications using:
-          </p>
+                <motion.div
+                  className="space-y-4 text-gray-300"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2 }}
+                >
+                  <motion.p
+                    className="text-lg leading-relaxed"
+                    initial={{ x: 20 }}
+                    animate={{ x: 0 }}
+                  >
+                    Hi! I&apos;m <span className="font-semibold text-emerald-400">Ashraful Rahat</span>, a passionate full-stack developer specializing in modern web technologies.
+                  </motion.p>
 
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <div className="flex items-center gap-2">
-              <FiCode className="text-purple-400" />
-              <span className="font-mono">React.js/Next.js</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FiServer className="text-purple-400" />
-              <span className="font-mono">Node.js/Express</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FiDatabase className="text-purple-400" />
-              <span className="font-mono">MongoDB/PostgreSQL</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FiLayout className="text-purple-400" />
-              <span className="font-mono">Tailwind CSS</span>
-            </div>
+                  <motion.div
+                    className="grid grid-cols-2 gap-4 mt-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.4 }}
+                  >
+                    {[ 
+                      { icon: <FiCode className="text-purple-400" />, text: "React.js/Next.js" },
+                      { icon: <FiServer className="text-purple-400" />, text: "Node.js/Express" },
+                      { icon: <FiDatabase className="text-purple-400" />, text: "MongoDB/PostgreSQL" },
+                      { icon: <FiLayout className="text-purple-400" />, text: "Tailwind CSS" },
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex items-center gap-2"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.6 + index * 0.1 }}
+                      >
+                        {item.icon}
+                        <span className="font-mono">{item.text}</span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  <motion.p
+                    className="text-lg leading-relaxed mt-6"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2 }}
+                  >
+                    My development approach combines clean code architecture with intuitive user interfaces.
+                  </motion.p>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
-
-          <p className="text-lg leading-relaxed mt-6">
-            My development approach combines clean code architecture with intuitive user interfaces. While I excel in frontend development, I particularly enjoy solving complex backend challenges and creating seamless API integrations.
-          </p>
-
- 
-        </div>
-      </motion.div>
-    </AnimatePresence>
-
-
-  </div>
-</motion.div>
-        
+        </motion.div>
       </div>
 
       {/* Skills Section (My Stack) */}
