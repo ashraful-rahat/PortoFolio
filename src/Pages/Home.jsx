@@ -1,5 +1,6 @@
 import About from "./About";
 import Banner from "./Banner";
+import Contact from "./Contact";
 import MyResume from "./MyResume";
 import Scroll from "./Scroll";
 import WhatDo from "./WhatDo";
@@ -22,6 +23,9 @@ const Home = () => {
 
       <Scroll delay={0.6}>
         <MyResume />
+      </Scroll>
+      <Scroll delay={0.6}>
+        <Contact />
       </Scroll>
     </div>
   );
