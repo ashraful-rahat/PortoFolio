@@ -6,15 +6,6 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { FaBriefcase, FaGraduationCap, FaLaptopCode } from "react-icons/fa"
 
-const designSkills = [
-  { name: "DESIGN", level: 90 },
-  { name: "PHOTOSHOP", level: 50 },
-  { name: "FIXSO", level: 80 },
-  { name: "FIGMA", level: 60 },
-  { name: "CANVA", level: 70 },
- 
-]
-
 const developmentSkills = [
   { name: "HTML", level: 90 },
   { name: "CSS", level: 80 },
@@ -23,7 +14,6 @@ const developmentSkills = [
   { name: "MONGODB", level: 60 },
 ]
 
-// Removed TypeScript type annotations
 const SkillBar = ({ name, level }) => (
   <div className="mb-6">
     <div className="flex justify-between items-center mb-2">
@@ -41,7 +31,6 @@ const SkillBar = ({ name, level }) => (
   </div>
 )
 
-// Removed TypeScript type annotations
 const TimelineEntry = ({ title, subtitle, year, description, additionalInfo }) => (
   <div className="relative pl-6 mb-12 last:mb-0">
     <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-pink-500 to-purple-500" />
@@ -58,8 +47,6 @@ const TimelineEntry = ({ title, subtitle, year, description, additionalInfo }) =
 
 const MyResume = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
-
- 
 
   return (
     <div style={{ backgroundColor: "rgb(32, 37, 40)" }} className="min-h-screen">
@@ -136,50 +123,12 @@ const MyResume = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-[#1a1e21] rounded-lg p-8"
               >
-                <div className="grid md:grid-cols-2 gap-12">
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-pink-500 mb-2">Features</h3>
-                    <h2 className="text-4xl font-bold text-white mb-8">Design Skill</h2>
-                    {designSkills.map((skill, index) => (
-                      <SkillBar key={index} name={skill.name} level={skill.level} />
-                    ))}
-                  </div>
-                  <div>
-                    <h3 className="text-sm uppercase tracking-wider text-pink-500 mb-2">Features</h3>
-                    <h2 className="text-4xl font-bold text-white mb-8">Development Skill</h2>
-                    {developmentSkills.map((skill, index) => (
-                      <SkillBar key={index} name={skill.name} level={skill.level} />
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </Tab.Panel>
-            <Tab.Panel>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <div className="text-pink-500 mb-4">2020 - Present</div>
-                <h2 className="text-4xl font-bold text-white mb-8">Job Experience</h2>
-                <div className="space-y-6">
-                  <TimelineEntry
-                    year="2023 - Present"
-                    title="Full Stack Developer"
-                    subtitle="Tech Solutions Ltd."
-                    additionalInfo="Dhaka, Bangladesh"
-                    description="Leading development of modern web applications using Next.js, React, and Node.js. Implementing responsive designs and optimizing application performance."
-                  />
-                  <TimelineEntry
-                    year="2022 - 2023"
-                    title="Frontend Developer"
-                    subtitle="Digital Innovations Co."
-                    additionalInfo="Remote"
-                    description="Developed and maintained client-side applications using React and TypeScript. Collaborated with UI/UX designers to implement pixel-perfect designs."
-                  />
-                  <TimelineEntry
-                    year="2021 - 2022"
-                    title="Web Developer Intern"
-                    subtitle="StartUp Tech"
-                    additionalInfo="Chittagong, Bangladesh"
-                    description="Assisted in developing and maintaining web applications. Gained hands-on experience with modern web technologies and agile development practices."
-                  />
+                <div>
+                  <h3 className="text-sm uppercase tracking-wider text-pink-500 mb-2">Features</h3>
+                  <h2 className="text-4xl font-bold text-white mb-8">Development Skill</h2>
+                  {developmentSkills.map((skill, index) => (
+                    <SkillBar key={index} name={skill.name} level={skill.level} />
+                  ))}
                 </div>
               </motion.div>
             </Tab.Panel>
@@ -191,4 +140,3 @@ const MyResume = () => {
 }
 
 export default MyResume
-
