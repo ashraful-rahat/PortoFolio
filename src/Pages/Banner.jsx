@@ -14,7 +14,7 @@ const Banner = () => {
                         {/* Image with higher z-index */}
                         <motion.img
                             src={bannerImg}
-                            className="w-[380px] sm:w-[300px] md:w-[300px] lg:w-[500px] xl:w-[650px] h-auto md:h-[550px] lg:h-[550px] z-20 -mt-16 lg:-mt-24 lg:-ml-6 md:-mt-32 ml-4 xl:ml-4"
+                            className="w-[380px] sm:w-[300px] md:w-[300px] lg:w-[500px] xl:w-[650px] h-auto md:h-[550px] lg:h-[550px] z-20 -mt-16 lg:-mt-24 lg:-ml-6 md:-mt-32 -ml-2 xl:ml-4"
                             alt="Banner"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -24,7 +24,7 @@ const Banner = () => {
                         />
                         {/* Overlay with motion animation */}
                         <motion.div
-                            className="absolute bottom-0 w-[330px] sm:w-[200px] md:w-[270px] lg:w-[340px] xl:w-[480px] xl:ml-28 h-[320px] sm:h-[200px] md:h-[340px] lg:h-[350px] bg-gradient-to-r from-[#1e2024] to-[#202327] shadow-shadowOne flex justify-center items-center z-10 lg:ml-14 ml-10"
+                            className="absolute bottom-0 w-[330px] sm:w-[200px] md:w-[270px] lg:w-[340px] xl:w-[480px] xl:ml-28 h-[320px] sm:h-[200px] md:h-[340px] lg:h-[350px] bg-gradient-to-r from-[#1e2024] to-[#202327] shadow-shadowOne flex justify-center items-center z-10 lg:ml-14 ml-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 2, ease: 'easeIn' }}
