@@ -17,16 +17,16 @@ const About = () => {
     <div className="min-h-screen pb-40 bg-[rgb(32,37,40)] text-white" id="about">
       {/* About Header */}
       <motion.h1
-        className="text-4xl text-indigo-200 mt-16 text-center"
-        data-aos="fade-down"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-      >
-        About Me
-      </motion.h1>
+            className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 text-center to-purple-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            About Me
+          </motion.h1>
 
       <div
-        className="divider w-1/12 bg-[#97a5ff] h-1 rounded-full mx-auto my-4"
+        className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-4 rounded-full"
         data-aos="fade-left"
         data-aos-duration="1700"
         data-aos-easing="ease-in-out"
@@ -137,14 +137,21 @@ const About = () => {
 
       {/* Skills Section (My Stack) */}
       <section>
-        <div
-          className="divider text-2xl pt-10 pb-14 mx-auto text-center"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-        >
-          My Stack
-        </div>
+      <motion.h1
+            className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 mt-14 text-center to-purple-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+           My Stack
+          </motion.h1>
+
+      <div
+        className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-5 mb-12 rounded-full"
+        data-aos="fade-left"
+        data-aos-duration="1700"
+        data-aos-easing="ease-in-out"
+      ></div>
         
         {/* Single Container Box for Glassy Effect */}
         <div

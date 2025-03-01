@@ -16,15 +16,16 @@ const Contact = () => {
         >
           <h2 className="text-sm uppercase tracking-widest text-teal-400 mb-4">Get in Touch</h2>
           <motion.h1
-            className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            Let&lsquo;s Connect
-          </motion.h1>
+  className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 to-purple-500 bg-clip-text text-transparent"
+  data-aos="fade-right"
+  data-aos-duration="1700"
+  data-aos-easing="ease-in-out"
+>
+  Let&lsquo;s Connect
+</motion.h1>
           <motion.div
             className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-4 rounded-full"
+
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
