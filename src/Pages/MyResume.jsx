@@ -96,14 +96,21 @@ const MyResume = () => {
   return (
     <div style={{ backgroundColor: "rgb(32, 37, 40)" }} className="min-h-screen">
       <div className="py-16 w-11/12 mx-auto text-gray-300">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl uppercase font-bold mb-10 text-center"
-        >
-          My Resume
-        </motion.h1>
+      <motion.h1
+  className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 text-center to-purple-500 bg-clip-text text-transparent"
+  data-aos="fade-right"
+  data-aos-duration="1700"
+  data-aos-easing="ease-in-out"
+>
+MY RESUME
+</motion.h1>
+
+      <div
+        className="w-32 h-1 bg-gradient-to-r  from-teal-400 to-purple-500 mx-auto mt-4 mb-12 rounded-full"
+        data-aos="fade-left"
+        data-aos-duration="1700"
+        data-aos-easing="ease-in-out"
+      ></div>
         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
           <Tab.List className="flex justify-center items-center space-x-4 border-b border-gray-700 pb-2 mb-8">
             {[

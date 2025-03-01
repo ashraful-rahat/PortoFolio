@@ -26,7 +26,7 @@ const About = () => {
           </motion.h1>
 
       <div
-        className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-4 rounded-full"
+        className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-4 mb-8 rounded-full"
         data-aos="fade-left"
         data-aos-duration="1700"
         data-aos-easing="ease-in-out"
@@ -102,9 +102,9 @@ const About = () => {
                     transition={{ delay: 1.4 }}
                   >
                     {[ 
-                      { icon: <FiCode className="text-purple-400" />, text: "React.js/Next.js" },
+                      { icon: <FiCode className="text-purple-400" />, text: "React.js" },
                       { icon: <FiServer className="text-purple-400" />, text: "Node.js/Express" },
-                      { icon: <FiDatabase className="text-purple-400" />, text: "MongoDB/PostgreSQL" },
+                      { icon: <FiDatabase className="text-purple-400" />, text: "MongoDB" },
                       { icon: <FiLayout className="text-purple-400" />, text: "Tailwind CSS" },
                     ].map((item, index) => (
                       <motion.div
@@ -138,13 +138,13 @@ const About = () => {
       {/* Skills Section (My Stack) */}
       <section>
       <motion.h1
-            className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 mt-14 text-center to-purple-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-           My Stack
-          </motion.h1>
+  className="text-5xl font-bold bg-gradient-to-r from-teal-400 via-blue-400 mt-12 text-center to-purple-500 bg-clip-text text-transparent"
+  data-aos="fade-right"
+  data-aos-duration="1700"
+  data-aos-easing="ease-in-out"
+>
+  MY STACK
+</motion.h1>
 
       <div
         className="w-24 h-1 bg-gradient-to-r from-teal-400 to-purple-500 mx-auto mt-5 mb-12 rounded-full"
