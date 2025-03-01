@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { FaGithub, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa"
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa"
 import { MdEmail, MdSmartphone } from "react-icons/md"
 
 const Contact = () => {
@@ -90,16 +90,30 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className="mt-8 flex space-x-4">
+              <motion.a
+                  whileHover={{ y: -3 }}
+                  href="https://www.facebook.com/rayhan.rifa.3"
+                  className="p-3 bg-gray-800 rounded-lg hover:bg-teal-400/10 transition-colors"
+                >
+                  <FaFacebook className="text-2xl text-gray-400 hover:text-teal-400" />
+                </motion.a>
                 <motion.a
                   whileHover={{ y: -3 }}
-                  href="https://github.com"
+                  href="https://github.com/ashraful-rahat"
+                  className="p-3 bg-gray-800 rounded-lg hover:bg-teal-400/10 transition-colors"
+                >
+                  <FaInstagram className="text-2xl text-gray-400 hover:text-teal-400" />
+                </motion.a>
+                <motion.a
+                  whileHover={{ y: -3 }}
+                  href="https://github.com/ashraful-rahat"
                   className="p-3 bg-gray-800 rounded-lg hover:bg-teal-400/10 transition-colors"
                 >
                   <FaGithub className="text-2xl text-gray-400 hover:text-teal-400" />
                 </motion.a>
                 <motion.a
                   whileHover={{ y: -3 }}
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ashraful-rahat-a74457278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   className="p-3 bg-gray-800 rounded-lg hover:bg-blue-400/10 transition-colors"
                 >
                   <FaLinkedin className="text-2xl text-gray-400 hover:text-blue-400" />
@@ -127,7 +141,7 @@ const Contact = () => {
                 <input
                   type="text"
                   className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-teal-400 focus:border-transparent"
-                  placeholder="-----------"
+                  placeholder="Enter Your Name"
                 />
               </motion.div>
 
@@ -140,7 +154,7 @@ const Contact = () => {
                 <input
                   type="email"
                   className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                  placeholder="-----------"
+                  placeholder="Enter Your Email Address"
                 />
               </motion.div>
 
